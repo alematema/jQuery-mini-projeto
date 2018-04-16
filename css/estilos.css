@@ -1,3 +1,9 @@
+body{
+	
+	overflow: scroll;
+	
+}
+
 .frase{
 	font-size: 25px;
 	text-align: left;
@@ -24,3 +30,8 @@
 .icones{
 	vertical-align: middle;
 }
+
+.placar{
+	display: none;
+}
+

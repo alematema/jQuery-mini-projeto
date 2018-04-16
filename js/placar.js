@@ -1,3 +1,5 @@
+$('#botao-placar').click(mostrarPlacar);
+
 function inserePlacar() {
 
 	var corpoTabela = $('.placar').find('tbody');
@@ -8,6 +10,16 @@ function inserePlacar() {
 	var linha = novaLinha(usuario, numPalavras);
 
 	corpoTabela.prepend(linha);
+	$('.placar').slideDown(500, scrollPlacar);
+}
+
+function scrollPlacar() {
+
+	var posicaoPlacar = $('.placar').offset().top;
+	//console.log('placar em ' + posicaoPlacar + 'px');
+	$('html').animate({
+		scrollTop: posicaoPlacar + 'px'
+	}, 1000);
 
 }
 
@@ -39,6 +51,12 @@ function novaLinha(usuario, numPalavras) {
 function removeLinha(event) {
 
 	event.preventDefault();
-	$(this).parent().parent().remove();
+	$(this).parent().parent().fadeOut(1000, function () {
+		$(this).remove()
+	});
 
+}
+
+function mostrarPlacar(event) {
+	jQuery('.placar').stop().toggle(1000,scrollPlacar);
 }

@@ -3,6 +3,8 @@ var campo = $('.campo-digitacao');
 
 //nova funcao
 $(function () {
+	campo.attr("disabled", false);
+	campo.val("");
 	atualizarTamanhoFrase();
 	inicializarContadores();
 	inicializarCronometro();
@@ -46,6 +48,11 @@ campo.on('input', function () {
 	}
 
 });
+
+//$("a").click(function(event){
+//		event.preventDefault();
+//    $(this).parent().parent().css("background-color","red");
+//});
 
 
 function reiniciarJogo() {
