@@ -11,6 +11,11 @@ $(function () {
 	$("#botao-reiniciar").click(reiniciarJogo);
 });
 
+function atualizarTempo(novoTempo){
+	 $("#tempo-digitacao").text(novoTempo);
+	tempoInicial = novoTempo;
+}
+
 function atualizarTamanhoFrase() {
 	var frase = $('.frase').text();
 	var numPalavras = frase.split(" ").length;
@@ -26,7 +31,6 @@ function inicializarContadores() {
 		if (conteudo.trim() == '') $('#contador-palavras').text(qtdPalavras.length - 1);
 		$('#contador-caracteres').text(conteudo.length);
 	});
-
 
 }
 
@@ -56,6 +60,7 @@ campo.on('input', function () {
 
 
 function reiniciarJogo() {
+	
 	campo.attr("disabled", false);
 	campo.val("");
 	$("#contador-palavras").text("0");

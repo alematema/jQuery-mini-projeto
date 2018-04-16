@@ -10,13 +10,13 @@ function inserePlacar() {
 	var linha = novaLinha(usuario, numPalavras);
 
 	corpoTabela.prepend(linha);
-	$('.placar').slideDown(500, scrollPlacar);
+	$('.placar').slideDown(1000, scrollPlacar);
+	
 }
 
 function scrollPlacar() {
 
 	var posicaoPlacar = $('.placar').offset().top;
-	//console.log('placar em ' + posicaoPlacar + 'px');
 	$('html').animate({
 		scrollTop: posicaoPlacar + 'px'
 	}, 1000);
@@ -52,7 +52,7 @@ function removeLinha(event) {
 
 	event.preventDefault();
 	$(this).parent().parent().fadeOut(1000, function () {
-		$(this).remove()
+		$(this).remove();
 	});
 
 }
