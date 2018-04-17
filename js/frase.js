@@ -1,19 +1,40 @@
 $('#botao-frase').click(fraseAleatoria);
+$('#botao-frase-id').click(buscaFrase);
 
 function fraseAleatoria() {
-	$.get('http://localhost:3000/frases', trocarFraseAleatoria);
+	toggleSpinner();
+	$.get('http://localhost:3000/frases', trocarFraseAleatoria).fail(notificarFalha).always(toggleSpinner);
 }
 
-function trocarFraseAleatoria(retorno) {
+function toggleSpinner() {
+	$('#spinner').toggle()
+}
 
-	var frase = $(".frase");
-	
-	var numeroAleatorio = Math.floor(Math.random() * retorno.length);
+function trocarFraseAleatoria(response) {
+	var numeroAleatorio = Math.floor(Math.random() * response.length);
+	setFrase(response[numeroAleatorio]);
+}
 
-	frase.text(retorno[numeroAleatorio].texto);
-	
+function notificarFalha(msg) {
+	$('#erro').show();
+	setTimeout(function () {
+		$('#erro').hide()
+	}, 2000);
+}
+
+function buscaFrase() {
+	toggleSpinner();
+	var fraseId = $('#frase-id').val();
+	var query = {
+		id: fraseId
+	};
+	$.get('http://localhost:3000/frases', query, setFrase).fail(notificarFalha).always(toggleSpinner);
+}
+
+function setFrase(obj){
+
+	$(".frase").text(obj.texto);
 	atualizarTamanhoFrase();
-	
-	atualizarTempo(retorno[numeroAleatorio].tempo);
+	atualizarTempo(obj.tempo);
 
 }
