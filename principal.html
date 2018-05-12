@@ -10,6 +10,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!-- Import SELECTIZE-->
 	<link rel="stylesheet" href="css/libs/selectize.default.css">
+	<!-- Import TOOLTIPSTER-->
+	<link rel="stylesheet" href="css/libs/tooltipster.bundle.min.css" />
 
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -48,13 +50,13 @@
 			<a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan" title="buscar frase por id"><i class="material-icons">repeat_one</i></a>
 			<input id="frase-id" type="number" min="0">
 			<div class="select-usuarios">
-					<select id="usuarios">
+				<select id="usuarios">
 							<option value="Douglas">Douglas</option>
 							<option value="Flavio">Flavio</option>
 							<option value="Nico">Nico</option>
 				 </select>
 			</div>
-			<a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow" title="sincronizar placar"><i class="material-icons">swap_vert</i></a>
+			<a id="botao-sync" class="tooltip btn-floating btn-large waves-effect waves-light yellow" title="sincronizar placar"><i class="material-icons">swap_vert</i></a>
 
 		</div>
 
@@ -81,7 +83,7 @@
 				</thead>
 				<tbody>
 
-<!--
+					<!--
 					<tr>
 
 						<td>Usuário Padrao</td>
@@ -122,6 +124,7 @@
 	<script src="js/frase.js"></script>
 	<script src="js/placar.js"></script>
 	<script src="js/selectize.js"></script>
+	<script src="js/tooltipster.bundle.min.js"></script>
 </body>
 
 </html>
