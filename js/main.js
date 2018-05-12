@@ -9,6 +9,7 @@ $(function () {
 	inicializarContadores();
 	inicializarCronometro();
 	$("#botao-reiniciar").click(reiniciarJogo);
+	atualizaPlacar();
 });
 
 function atualizarTempo(novoTempo){
