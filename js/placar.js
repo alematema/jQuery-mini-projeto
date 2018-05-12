@@ -5,7 +5,7 @@ function inserePlacar() {
 
 	var corpoTabela = $('.placar').find('tbody');
 	//	var corpoTabela = document.querySelector('tbody');
-	var usuario = 'alex_andré';
+	var usuario =  $("#usuarios").val();
 	var numPalavras = $('#contador-palavras').text();
 
 	var linha = novaLinha(usuario, numPalavras);
