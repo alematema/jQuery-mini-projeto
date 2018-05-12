@@ -3,7 +3,7 @@ $('#botao-frase-id').click(buscaFrase);
 
 function fraseAleatoria() {
 	toggleSpinner();
-	$.get('http://localhost:3000/frases', trocarFraseAleatoria).fail(notificarFalha).always(toggleSpinner);
+	$.get('http://localhost:3001/frases', trocarFraseAleatoria).fail(notificarFalha).always(toggleSpinner);
 }
 
 function toggleSpinner() {
@@ -28,7 +28,7 @@ function buscaFrase() {
 	var query = {
 		id: fraseId
 	};
-	$.get('http://localhost:3000/frases', query, setFrase).fail(notificarFalha).always(toggleSpinner);
+	$.get('http://localhost:3001/frases', query, setFrase).fail(notificarFalha).always(toggleSpinner);
 }
 
 function setFrase(obj){

@@ -14,7 +14,7 @@ $(function () {
 
 function atualizarTempo(novoTempo){
 	 $("#tempo-digitacao").text(novoTempo);
-	tempoInicial = novoTempo;
+	 tempoInicial = novoTempo;
 }
 
 function atualizarTamanhoFrase() {
@@ -78,15 +78,14 @@ function reiniciarJogo() {
 
 	campo.one('focus', function () {
 
-
 		$("#botao-reiniciar").attr("disabled", true);
 		var tempoRestante = $('#tempo-digitacao').text();
 		var cronometroID = setInterval(function () {
 
 			tempoRestante--;
 			$('#tempo-digitacao').text(tempoRestante);
+			
 			if (tempoRestante < 1) {
-
 				clearInterval(cronometroID);
 				finalizaJogo();
 			}
