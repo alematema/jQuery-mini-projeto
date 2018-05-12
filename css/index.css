@@ -1,11 +1,12 @@
-.card{
+.card {
 	width: 49%;
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: middle;
+	border-radius: 15px;
+
 }
 
-
-#botao-jogue{
+#botao-jogue {
 	width: 150px;
 	display: block;
 	margin: 50px auto;
@@ -13,4 +14,13 @@
 
 .imagem-jogo {
 	border: 2px solid gray;
+}
+
+.slider {
+	height: auto;
+}
+
+.slick-prev:before,
+.slick-next:before {
+	color: black;
 }
